@@ -6,3 +6,4 @@ print(key)
 with open ("thekey.key", "wb") as thekey:
     thekey.write(key)
     
+    
