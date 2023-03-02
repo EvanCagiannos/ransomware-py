@@ -1,1 +1,1 @@
-# Cs-viRAL-prODJect-A
+# ransomware-py
