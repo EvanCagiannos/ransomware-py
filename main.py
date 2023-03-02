@@ -11,3 +11,4 @@ for file in os.listdir():
 print(files)
 
 key = fernet_generate_key()
+
