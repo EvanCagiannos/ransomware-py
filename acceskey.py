@@ -1,9 +1,12 @@
-# this is the key to the incrpyted data 
+# import the Fernet module from the cryptography library
+from cryptography.fernet import Fernet
+
+# generate a new key
+key = Fernet.generate_key()
+
+# print the key
 print(key)
 
-# line below states that the open function creates a file called thekey.key and opens it it write binary mode which is referd to thekey
-
-with open ("thekey.key", "wb") as thekey:
+# write the key to a file named "thekey.key" in binary mode
+with open("thekey.key", "wb") as thekey:
     thekey.write(key)
-    
-    
